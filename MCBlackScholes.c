@@ -1,6 +1,8 @@
 /*
   Uses Monte Carlo simulation to price an option in a Black
   Scholes world.
+  
+  Source file is dependent on the identically named header. Parameters are hardcoded out of laziness. 
 
   Author: Adam Diehl
 
