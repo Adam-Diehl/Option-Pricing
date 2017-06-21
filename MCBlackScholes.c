@@ -1,12 +1,13 @@
 /*
   Uses Monte Carlo simulation to price an option in a Black
   Scholes world.
-  
-  Source file is dependent on the identically named header. Parameters are hardcoded out of laziness. 
 
   Author: Adam Diehl
 
   Date: June 7, 2017
+
+    $ gcc -o BlackScholes MCBlackScholes.c -O3
+    $ time ./BlackScholes
 */
 
 #include <math.h>
@@ -22,7 +23,7 @@ double r = 0.030485;
 double vol = 0.3392;
 double T = 0.5;
 double dt = 1/252;
-int N = 1000000;
+int N = 100000000;
 
 //Declare function
 double RNORM();
@@ -53,12 +54,14 @@ double CallPremium = 0;
 double PutPremium = 0;
 
 int i;
+int tick = -5;
 for (i = 0; i < N; i = i+1) {
   double TerminalPrice;
     TerminalPrice = S*exp(drift + psp*RNORM());
   CallPayoff[i] = (TerminalPrice - K);
   PutPayoff[i] = (K - TerminalPrice);
 
+  //Negative positions won't be exercised
   if(CallPayoff[i] < 0){
     CallPayoff[i] = 0;
   }
@@ -66,8 +69,15 @@ for (i = 0; i < N; i = i+1) {
     PutPayoff[i] = 0;
   }
 
+  //Update premium
   CallPremium = CallPremium + CallPayoff[i];
   PutPremium = PutPremium + PutPayoff[i];
+
+  //Marks program process during execution (adds ~0.6 seconds @ 100M realizations)
+  if(i%progressIndicator == 0) {
+    tick = tick + 10;
+    printf("Status at %d percent \n", tick);
+  }
 }
 
 CallPremium = CallPremium*discount*weight;
