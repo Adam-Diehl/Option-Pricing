@@ -2,7 +2,7 @@
   Uses Monte Carlo simulation to price an option in a Black
   Scholes world.
 
-  Header file contains the pseudo-random normal number generator. 
+  Header file contains the pseudo-random normal number generator. Version 2.0
 
   Author: Adam Diehl
 
