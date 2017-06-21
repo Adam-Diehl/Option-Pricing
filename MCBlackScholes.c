@@ -6,6 +6,7 @@
 
   Date: June 7, 2017
 
+  Compilation notes:
     $ gcc -o BlackScholes MCBlackScholes.c -O3
     $ time ./BlackScholes
 */
