@@ -14,8 +14,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
-#include "MCBlackScholes.h"
+#include "BlackScholes.h"
 
 //Define parameters
 double S = 100;
