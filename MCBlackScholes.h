@@ -6,7 +6,7 @@
 
   Author: Adam Diehl
 
-  Date: June 7, 2017
+  Date: June 22, 2017
 */
 
 //Define functions
