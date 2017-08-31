@@ -1,2 +1,2 @@
 # Option-Pricing
-Option pricing algorithms in various languages.
+Option pricing algorithms in C/C++.
