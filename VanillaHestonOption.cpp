@@ -18,7 +18,7 @@ gcc-7 -o Heston VanillaHestonOption.cpp -O3 -lstdc++ -fopenmp
 #include <cmath>
 #include <iostream>
 #include <random>
-#include "VanillaHestonOption.h"
+#include "GaussPRNG.h"
 
 /*--------------------------- Declare Parameters -----------------------------*/
 
