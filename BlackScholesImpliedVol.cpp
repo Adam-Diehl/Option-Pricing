@@ -54,8 +54,6 @@ int main() {
     double IV = 0.00; //Initial Volatility
     double LowerBound = 0.0;
     double UpperBound = 2.0;
-    double MidPoint = 0.0;
-    double HighPoint = 0.02;
 
     //Calculate an initial estimate using the Brenner-Subrahmanyam formula
     IV = c*sqrt(2*Pi) / (S*sqrt(T));
