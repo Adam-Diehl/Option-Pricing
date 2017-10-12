@@ -5,7 +5,7 @@ File: Prices vanilla (European) options using the Heston model using a
 
 Author: Adam Diehl
 
-Date: Aug 31, 2017
+Date: oct 12, 2017
 
 Tested with GCC 7.2.0 with...
 gcc-7 -o Asian AsianEuropeanBlackScholes.cpp -O3 -lstdc++ -fopenmp
