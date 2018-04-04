@@ -6,7 +6,7 @@ double HestonInnerLoop(double S, double K, double r, double T, double IV, int Op
   //Seed the RNG
   std::random_device rd;
   std::mt19937 gen(rd());
-  std::normal_distribution<float> RNORM(0.0, 1.0);
+  std::normal_distribution<double> RNORM(0.0, 1.0);
 
   //Allocate memory for core arrays (on the stack) and values
   double StockPaths[ChunkSize][M] = {};
